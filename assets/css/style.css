@@ -144,11 +144,12 @@ figcaption {
 
 .project-card {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     background: rgb(249, 249, 249);
-    padding: 2rem;
+    padding: 1rem 2rem;
     gap: 2rem;
     width: 100%;
+    border-radius: 40px;
 }
 
 .project-card figure {
@@ -164,6 +165,7 @@ figcaption {
     gap: 2rem;
     flex-wrap: wrap;
     margin-bottom: 2rem;
+    border-radius: 40px;
 }
 .about-content .text {
     flex: 1;
