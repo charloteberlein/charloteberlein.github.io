@@ -1,0 +1,51 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Charlot Eberlein</title>
+        <link rel="stylesheet" href="/assets/css/style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <header>
+            <div class="header-box">
+                <h1 class="site-title">Charlot Eberlein</h1>
+                <nav class="site-nav">
+                    <ul>
+                        <li><a href="/index.html">Home</a></li> |
+                        <li><a href="/projects.html">Projects</a></li> |
+                        <li><a href="https://github.com/charloteberlein">GitHub</a></li> |
+                        <li><a href="https://www.linkedin.com/in/charloteberlein/">LinkedIn</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <div class="main-content">
+            <section>
+                <img src="/assets/img/racing_lines_demo.png" alt="MatPlotLib racing track screenshot">
+                <h1>Optimal Racing Line Generator</h1>
+                <a href="/notebooks/racing_lines_nb.html">Jupyter Notebook</a> •
+                <a href="https://www.linkedin.com/posts/activity-7353481557615017984-ohAl?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFiljwcBJg1_PxdMHruF2s3M-kOfQI7bPn0">Original LinkedIn post</a> •
+                <a href="https://github.com/charloteberlein/racing-line-optimiser">GitHub Repository</a>
+                <h3>Summer 2025</h3>
+                <p>From my LinkedIn:<br>
+                    "The goal is to find a path that minimises both curvature and length, so less steering is required. Professionally, similar techniques are used to optimise both fuel efficiency and lap times in motorsport.
+                </p>
+                <p>
+                    My solution uses B-spline smoothing to interpolate the initial track shape, and dynamic programming to iteratively produce the final optimal path. This approach avoids combinatorial explosion by efficiently selecting minimal-cost paths at each iteration, rather than brute-forcing every possibility. It required a fair amount of low-level manipulation of splines, as well as calculating geometric curvature and arc length via numerical integration.
+                </p>
+                <p>
+                    Cost functions quantify how well a solution fits target criteria. I had to manually design, tune, and normalise my own polynomial cost function, balancing curvature and path length while adding an angle penalty to discourage sharp corners."
+                </p>
+            </section>
+        </div>
+        
+        <footer>
+            <div class="footer-box">
+                <p class="footer-text">© 2025 Charlot Eberlein</p>
+            </div>
+        </footer>
+    </body>
+</html>

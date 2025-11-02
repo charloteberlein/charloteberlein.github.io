@@ -1,0 +1,157 @@
+/* default margins & padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    min-height: 100vh;
+    font-family: 'Noto Serif', 'Times New Roman', serif;
+    background-color: white;
+    color: #101121;
+    line-height: 1.6;
+    text-align: justify;
+    hyphens: auto;
+}
+.main-content {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    box-sizing: border-box;
+    flex: 1 0 auto;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family:'Noto Sans', 'Helvetica Neue', Arial, sans-serif; 
+    text-align: left;
+    margin-bottom: 1rem;
+    hyphens: none;
+}
+h1 {
+    margin-bottom: 0;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    z-index: 1000;
+    background: rgb(249, 249, 249);
+    color: #101121;
+    display: flex;
+    justify-content: center;
+}
+.header-box {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    padding: 0.75rem 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    color: #101121;
+}
+
+footer {
+    position: sticky;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    background: rgb(249, 249, 249);
+    color: #101121;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+}
+.footer-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0.75rem 1.5rem;
+}
+.footer-text {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+h1.site-title {
+    flex: 1 1 auto;
+    min-width: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin: 0;
+}
+
+nav.site-nav {
+    display: flex;
+    align-items: center;
+    background: transparent;
+    border: none;
+    padding: 0 0;
+}
+nav.site-nav ul {
+    display: flex;
+    list-style: none;
+    gap: 1rem;
+    margin: 0;
+    padding: 0;
+}
+nav.site-nav a {
+    color: #206661;
+    text-decoration: none;
+    transition: 0.2s;
+}
+nav.site-nav a:hover {
+    color: #68c7c1;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 1rem auto;
+}
+
+/* link formatting */
+a {
+    color: #206661;
+    text-decoration: none;
+}
+a:hover {
+    color: #4dafa9;
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+p {
+    margin-bottom: 0.5rem;
+}
+
+figcaption {
+    text-align: center;
+}
+
+.project-card {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    background: rgb(249, 249, 249);
+    padding: 2rem;
+    gap: 2rem;
+    width: 100%;
+}
+
+.project-card figure {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+}
