@@ -1,3 +1,4 @@
 layouts/
 *.ipynb
 .DS_Store
+.vscode

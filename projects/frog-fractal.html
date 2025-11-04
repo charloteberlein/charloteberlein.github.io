@@ -1,0 +1,102 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Charlot Eberlein</title>
+        <link rel="stylesheet" href="/assets/css/style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <header>
+            <div class="header-box">
+                <h1 class="site-title">Charlot Eberlein</h1>
+                <nav class="site-nav">
+                    <ul>
+                        <li><a href="/index.html">Home</a></li> |
+                        <li><a href="/projects.html">Projects</a></li> |
+                        <li><a href="https://github.com/charloteberlein">GitHub</a></li> |
+                        <li><a href="https://www.linkedin.com/in/charloteberlein/">LinkedIn</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <div class="main-content">
+            <section>
+                
+                <h1>A Deep Dive into the Frog Fractal</h1>
+                <h3>November 2025</h3>
+
+                <h2>Lightweight initial visualisations using Jupyter and MatPlotLib</h2>
+                <section class="project-card">
+                    <img src="/assets/img/frog0.jpeg" alt="Frog Fractal">
+                    <img src="/assets/img/frog1.jpeg" alt="Fractal enlarged">
+                    <img src="/assets/img/frog2.jpeg" alt="Fractal enlarged">
+                </section><br>
+                
+                <h2>Porting to C++ and SFML</h2>
+                <p>Porting this from Python to C++ allowed for real-time exploration (zooming and panning) of the fractal, however this took a considerable amount of optimisation (particularly making the complex exponentiation compatible with parallelisation). I will make the source code for this project available on my GitHub soon.</p>
+                <p>Recall that for this fractal, z = z<sup>z</sup> + c &times z<sup>z</sup> = (c+1) &times z<sup>z</sup>.</p>
+
+                <h3>Value- and Iteration Thresholding</h3>
+                <p>The way escape time fractals work is that, for every visible pixel position, we compute the number of iterations (time) for an iterative formula to exceed (escape) a given threshold. Sometimes it won't diverge for a very long time, so we cap the iterations at a maximum possible number for efficiency.</p>
+                <p>Interestingly, changing both the value threshold and iterations threshold can make the same fractal formula look very different. In this project, the value threshold is constant for the entire visualisation, but the iteration threshold is dependent on the zoom level: the further you zoom, the greater this needs to be to render finer details properly.</p>
+
+                <section class="project-card">
+                    <figure>
+                        <img src="/assets/img/frog3.jpeg" alt="Frog Fractal">
+                        <figcaption>Value Threshold: 3.0</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="/assets/img/frog5.jpeg" alt="Frog Fractal">
+                        <figcaption>Value Threshold: 8.0</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="/assets/img/frog6.jpeg" alt="Frog Fractal">
+                        <figcaption>Value Threshold: 16.0</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="/assets/img/frog7.jpeg" alt="Frog Fractal">
+                        <figcaption>Value Threshold: 128.0</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="/assets/img/frog8.jpeg" alt="Frog Fractal">
+                        <figcaption>Value Threshold: 1024.0</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="/assets/img/frog8a.jpeg" alt="Frog Fractal">
+                        <figcaption><p>Value Threshold: 1024.0<br>(Enlarged on a straight section)</p></figcaption>
+                    </figure>
+                </section><br>
+
+                <h3>Value Threshold 8.0</h3>
+                <section class="project-card">
+                    <img src="/assets/img/frog5b.jpeg" alt="Frog Fractal">
+                    <img src="/assets/img/frog5a.jpeg" alt="Frog Fractal">
+                </section><br>
+
+                <h3>Value Threshold 16.0</h3>
+                <section class="project-card">
+                    <img src="/assets/img/frog6a.jpeg" alt="Frog Fractal">
+                    <img src="/assets/img/frog6b.jpeg" alt="Frog Fractal">
+                    <img src="/assets/img/frog6c.jpeg" alt="Frog Fractal">
+                </section><br>
+
+                <h3>Value Threshold 1024.0</h3>
+                <section class="project-card">
+                    <img src="/assets/img/frog8b.jpeg" alt="Frog Fractal">
+                    <img src="/assets/img/frog8c.jpeg" alt="Frog Fractal">
+                    <img src="/assets/img/frog8d.jpeg" alt="Frog Fractal">
+                </section>
+
+            </section>
+        </div>
+        
+        <footer>
+            <div class="footer-box">
+                <p class="footer-text">© 2025 Charlot Eberlein</p>
+            </div>
+        </footer>
+    </body>
+</html>
