@@ -8,64 +8,208 @@
         <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     </head>
     <body>
-        <header>
-            <div class="header-box">
-                <h1 class="site-title">Charlot Eberlein</h1>
-                <nav class="site-nav">
-                    <ul>
-                        <li><a href="/index.html">Home</a></li> |
-                        <li><a href="/projects.html">Projects</a></li> |
-                        <li><a href="https://github.com/charloteberlein">GitHub</a></li> |
-                        <li><a href="https://www.linkedin.com/in/charloteberlein/">LinkedIn</a></li>
-                    </ul>
-                </nav>
-            </div>
-        </header>
+        <div id="header"></div>
+
+        <div class="banner">
+            <img src="/assets/img/mandelbrot_fractal7.png" alt="Mandelbrot Fractal">
+        </div>
 
         <div class="main-content">
             <section>
-                <img src="/assets/img/mandelbrot_fractal7.png" alt="Mandelbrot Fractal">
                 <h1>Mandelbrot Fractal Visualisations</h1>
-                <h3>November 2023</h3>
+                <figure style="float: right; margin-left: 15px; margin-bottom: 10px;">
+                    <img src="/assets/img/frog0.jpeg" alt="Fractal enlarged" style="border:2px solid var(--text-c);">
+                    <figcaption>Escape-time fractal with z = z<sup>z</sup> + c &times z<sup>z</sup> = (c+1) &times z<sup>z</sup></figcaption>
+                </figure>
+                <h3>February 2026</h3>
+                <p>While there are many different types of fractals, escape-time fractals such as the Mandelbrot set are the perhaps most iconic and beautiful of them all.</p>
+                <h3>Value- and Iteration Thresholding</h3>
+                <p>The way escape-time fractals work is that, for every visible pixel position, we compute the number of iterations (time) for an iterative formula to exceed (escape) a given threshold. Sometimes it won't diverge for a very long time, so we cap the iterations at a maximum possible number for efficiency.</p>
+                <p>Interestingly, changing both the value threshold and iterations threshold can make the same fractal formula look very different. In this project, the value threshold is constant for the entire visualisation, but the iteration threshold is dependent on the zoom level: the further you zoom, the greater this needs to be to render finer details properly.</p>
+                <h3>Interactive Visualisation</h3>
+                <p>Below, I've compiled the C++ source code for my project in Web Assembly, which lets you embed it into the html code of websites like this one. Please have a play around with the fractal and explore it yourself! Just refresh the page at any time, if you'd like to reset it. You should be able to:</p>
                 <ul>
-                    <li><b>Variations 1, 4, 5, & 6:</b> an enlarged section of variation 3.</li>
-                    <li><b>Variation 2:</b> the classic Mandelbrot fractal, with some efforts made to smooth the colour gradient. I originally used a tutorial by Karl Sims, although unfortunately it seems that it is no longer publically available.</li>
-                    <li><b>Variation 3:</b> a Mandelbrot-esque escape time fractal of my own creation (which I have dubbed the "frog fractal" due to its close resemblance to a frog) using the recurrence relation: z = z<sup>z</sup> + c &times z<sup>z</sup>
-                    </li>
+                    <li>Drag the fractal around the screen</li>
+                    <li>Use the scrollwheel to zoom in or out (touchpads and Apple mice aren't compatible)</li>
+                    <li>Press the Q key to zoom out slowly</li>
                 </ul>
+                <canvas id="canvas" width="800" height="600" style="width:800px; height:600px; display:block; margin:50px auto; border:2px solid #000;"></canvas>
+                <script src="/assets/scripts/mandelbrot.js"></script>
+                <h3>Mandelbrot Animations</h3>
+                <p>The following gifs were generated using my C++ program, which is also available on my GitHub <a href="https://github.com/charloteberlein/mandelbrot-fractal">here</a>.</p>
+                <section class="project-card">
+                    <figure><img src="/assets/img/mandelbrot0.gif" alt="Mandelbrot Fractal"></figure>
+                    <figure><img src="/assets/img/mandelbrot1.gif" alt="Mandelbrot Fractal"></figure>
+                </section>
+            </section><br>
+
+            <section>
+                
+                
+
+                <h1>Project Development</h1><br>
+
+                
+                
+                <h3>Porting to C++ and SFML</h3>
+                <p>Porting this from Python to C++ allowed for real-time exploration (zooming and panning) of the fractal, which Python would have otherwise been too slow for, however this took a considerable amount of optimisation (particularly making the complex exponentiation compatible with parallelisation).</p>
+                
                 <section class="project-card">
                     <figure>
-                        <img src="/assets/img/mandelbrot_fractal_19d.png" alt="Mandelbrot Fractal">
-                        <figcaption>Var. 1</figcaption>
+                        <img src="/assets/img/frog3.jpeg" alt="Frog Fractal">
+                        <figcaption>Value Threshold: 3.0</figcaption>
                     </figure>
                     <figure>
-                        <img src="/assets/img/electrostatic_potential_highres2.jpeg" alt="Mandelbrot Fractal">
-                        <figcaption>Var. 2</figcaption>
+                        <img src="/assets/img/frog5.jpeg" alt="Frog Fractal">
+                        <figcaption>Value Threshold: 8.0</figcaption>
                     </figure>
                     <figure>
-                        <img src="/assets/img/mandelbrot_fractal_19a.png" alt="Mandelbrot Fractal">
-                        <figcaption>Var. 3</figcaption>
+                        <img src="/assets/img/frog6.jpeg" alt="Frog Fractal">
+                        <figcaption>Value Threshold: 16.0</figcaption>
                     </figure>
                     <figure>
-                        <img src="/assets/img/electro_19_highres1.png" alt="Mandelbrot Fractal">
-                        <figcaption>Var. 4</figcaption>
+                        <img src="/assets/img/frog7.jpeg" alt="Frog Fractal">
+                        <figcaption>Value Threshold: 128.0</figcaption>
                     </figure>
                     <figure>
-                        <img src="/assets/img/electro_19_highres0.png" alt="Mandelbrot Fractal">
-                        <figcaption>Var. 5</figcaption>
+                        <img src="/assets/img/frog8.jpeg" alt="Frog Fractal">
+                        <figcaption>Value Threshold: 1024.0</figcaption>
                     </figure>
                     <figure>
-                        <img src="/assets/img/mandelbrot_fractal_19b.png" alt="Mandelbrot Fractal">
-                        <figcaption>Var. 6</figcaption>
+                        <img src="/assets/img/frog8a.jpeg" alt="Frog Fractal">
+                        <figcaption><p>Value Threshold: 1024.0<br>(Enlarged on a straight section)</p></figcaption>
                     </figure>
+                </section><br>
+                
+            </section>
+            <section>
+                <h1>Gallery</h1><br>
+                <h2>Comparing threshold values</h2>
+                <h3>Value Threshold 8.0</h3>
+                <section class="project-card">
+                    <img src="/assets/img/frog5b.jpeg" alt="Frog Fractal">
+                    <img src="/assets/img/frog5a.jpeg" alt="Frog Fractal">
+                </section><br>
+                <h3>Value Threshold 16.0</h3>
+                <section class="project-card">
+                    <img src="/assets/img/frog6a.jpeg" alt="Frog Fractal">
+                    <img src="/assets/img/frog6b.jpeg" alt="Frog Fractal">
+                    <img src="/assets/img/frog6c.jpeg" alt="Frog Fractal">
+                </section><br>
+                <h3>Value Threshold 1024.0</h3>
+                <section class="project-card">
+                    <img src="/assets/img/frog8b.jpeg" alt="Frog Fractal">
+                    <img src="/assets/img/frog8c.jpeg" alt="Frog Fractal">
+                    <img src="/assets/img/frog8d.jpeg" alt="Frog Fractal">
+                </section><br>
+                <h2>Lightweight initial visualisations using Jupyter and MatPlotLib</h2>
+                <section class="project-card">
+                    <img src="/assets/img/frog1.jpeg" alt="Fractal enlarged">
+                    <img src="/assets/img/frog2.jpeg" alt="Fractal enlarged">
+                </section><br>
+                <h3>November 2025</h3>
+                <section class="project-card">
+                    <figure><img src="/assets/img/mandelbrot_fractal_19d.png" alt="Mandelbrot Fractal"></figure>
+                    <figure><img src="/assets/img/electrostatic_potential_highres2.jpeg" alt="Mandelbrot Fractal"></figure>
+                    <figure><img src="/assets/img/mandelbrot_fractal_19a.png" alt="Mandelbrot Fractal"></figure>
+                    <figure><img src="/assets/img/electro_19_highres1.png" alt="Mandelbrot Fractal"></figure>
+                    <figure><img src="/assets/img/electro_19_highres0.png" alt="Mandelbrot Fractal"></figure>
+                    <figure><img src="/assets/img/mandelbrot_fractal_19b.png" alt="Mandelbrot Fractal"></figure>
                 </section>
             </section>
         </div>
-        
-        <footer>
-            <div class="footer-box">
-                <p class="footer-text">© 2025 Charlot Eberlein</p>
-            </div>
-        </footer>
+
+        <div id="footer"></div>
+        <script src="/assets/scripts/load-header-footer.js"></script>
+
+        <script>
+            let left = -2.0;
+            let up = -1.5;
+            let x_side = 3.0;
+            let y_side = 2.25;
+            let max_iter = 30;
+            let modified_view = true;
+            
+            let canvas = document.getElementById('canvas');
+            let ctx = canvas.getContext('2d');
+            let imageData = ctx.createImageData(800, 600);
+            
+            let draw_mandelbrot, get_pixels;
+            
+            Module.onRuntimeInitialized = function() {
+                draw_mandelbrot = Module.cwrap('draw_mandelbrot', null, 
+                    ['number', 'number', 'number', 'number', 'number']);
+                get_pixels = Module.cwrap('get_pixels', 'number', []);
+                
+                render();
+            };
+            
+            function render() {
+                draw_mandelbrot(left, up, x_side, y_side, max_iter);
+                let pixelPtr = get_pixels();
+                let pixelData = new Uint32Array(Module.HEAPU8.buffer, pixelPtr, 800 * 600);
+                let data = imageData.data;
+                for (let i = 0; i < 800 * 600; i++) {
+                    let colour = pixelData[i];
+                    data[i * 4] = (colour >> 16) & 0xFF;
+                    data[i * 4 + 1] = (colour >> 8) & 0xFF;
+                    data[i * 4 + 2] = colour & 0xFF;
+                    data[i * 4 + 3] = 0xFF;
+                }
+                ctx.putImageData(imageData, 0, 0);
+            }
+            function zoom(z_f, mouse_x, mouse_y) {
+                let f_x = left + mouse_x * (x_side / 800);
+                let f_y = up + mouse_y * (y_side / 600);
+                x_side *= z_f;
+                y_side *= z_f;
+                left = f_x - (mouse_x / 800) * x_side;
+                up = f_y - (mouse_y / 600) * y_side;
+                
+                let new_iter = Math.floor(10 * Math.log2(1 / x_side));
+                if (new_iter > 30 && new_iter < 2000) max_iter = new_iter;
+                render();
+            }
+            canvas.addEventListener('wheel', (e) => {
+                e.preventDefault();
+                let rect = canvas.getBoundingClientRect();
+                let x = e.clientX - rect.left;
+                let y = e.clientY - rect.top;
+                zoom(e.deltaY > 0 ? 1.2 : 0.6, x, y);
+            });
+            window.addEventListener('keydown', (e) => {
+                if (e.key === 'q' || e.key === 'Q') {
+                    console.log("Q pressed");
+                    if (x_side >= 3.0 || y_side >= 3.0*0.75) return;
+                    zoom(1.03, 400.0, 300.0);
+                }
+            });
+            let is_panning = false;
+            let pan_start = {x: 0, y: 0};
+            let pan_left = left;
+            let pan_up = up;
+            canvas.addEventListener('mousedown', (e) => {
+                is_panning = true;
+                let rect = canvas.getBoundingClientRect();
+                pan_start.x = e.clientX - rect.left;
+                pan_start.y = e.clientY - rect.top;
+                pan_left = left;
+                pan_up = up;
+            });
+            canvas.addEventListener('mousemove', (e) => {
+                if (!is_panning) return;
+                let rect = canvas.getBoundingClientRect();
+                let x = e.clientX - rect.left;
+                let y = e.clientY - rect.top;
+                let delta_x = -(x - pan_start.x) * (x_side / 800);
+                let delta_y = -(y - pan_start.y) * (y_side / 600);
+                left = pan_left + delta_x;
+                up = pan_up + delta_y;
+                render();
+            });
+            canvas.addEventListener('mouseup', () => {
+                is_panning = false;
+            });
+        </script>
     </body>
 </html>

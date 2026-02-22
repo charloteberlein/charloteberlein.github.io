@@ -8,19 +8,8 @@
         <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     </head>
     <body>
-        <header>
-            <div class="header-box">
-                <h1 class="site-title">Charlot Eberlein</h1>
-                <nav class="site-nav">
-                    <ul>
-                        <li><a href="index.html">Home</a></li> |
-                        <li><a href="projects.html">Projects</a></li> |
-                        <li><a href="https://github.com/charloteberlein">GitHub</a></li> |
-                        <li><a href="https://www.linkedin.com/in/charloteberlein/">LinkedIn</a></li>
-                    </ul>
-                </nav>
-            </div>
-        </header>
+        
+        <div id="header"></div>
 
         <div class="main-content">
             <section class="about">
@@ -29,7 +18,7 @@
                     <div class="text">
                         <h2>About Me</h2>
                         <p>I'm a first year Computer Science student at Loughborough University curious about computer vision and data science. While I'm open to opportunities across all sectors, I'm particularly interested in defence and safety-critical applications, and have recently completed technical interviews at two major defence contractors.</p>
-                        <p>I work primarily in Python and have extensive experience with machine learning and statistics libraries including TensorFlow, Sci-Kit Learn, NumPy, SciPy, MatPlotLib, and more. I'm also learning C++, and have used LaTeX, HTML, Swift, Java, and Haskell.</p>
+                        <p>I work primarily in Python and have extensive experience with machine learning and statistics libraries including TensorFlow, Sci-Kit Learn, NumPy, SciPy, MatPlotLib, and more, as well as presentation with Jupyter Notebooks. I'm also learning C/C++ and Java, and have used Julia, LaTeX, HTML/CSS, and Haskell.</p>
                     </div>
                     <div class="project-card">
                         <p>I'm currently seeking out software engineering internships for summer 2026. Feel free to explore my projects or connect with me on LinkedIn.</p>
@@ -39,12 +28,12 @@
             <section>
                 <h2>Recent Projects</h2>
                 <section class="project-card">
-                    <figure>
+                <figure>
                     <figcaption>
-                        <a href="/projects/racing-lines.html">Racing Line Optimiser</a>
+                        <a href="/projects/mandelbrot.html">Visualising the Mandelbrot Set</a>
                     </figcaption>
-                    <a href="/projects/racing-lines.html">
-                        <img src="assets/img/racing_lines_demo.png" alt="MatPlotLib racing track screenshot" width="300">
+                    <a href="/projects/mandelbrot.html">
+                        <img src="assets/img/mandelbrot2.gif" alt="Mandelbrot set zoom-in" width="300">
                     </a>
                 </figure>
                 <figure>
@@ -59,10 +48,8 @@
             </section>
         </div>
         
-        <footer>
-            <div class="footer-box">
-                <p class="footer-text">© 2025 Charlot Eberlein</p>
-            </div>
-        </footer>
+        <div id="footer"></div>
+        <script src="/assets/scripts/load-header-footer.js"></script>
+        
     </body>
 </html>
