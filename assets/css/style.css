@@ -85,30 +85,35 @@ header {
 }
 
 footer {
-    position: sticky;
     bottom: 0;
     left: 0;
     width: 100vw;
+    padding: 1rem 0;
     background: var(--header-footer-c);
     color: var(--text-c);
     z-index: 1000;
-    display: flex;
-    justify-content: center;
+}
+footer a {
+    background: var(--header-footer-c);
 }
 .footer-box {
-    display: flex;
-    align-items: center;
-    justify-content: center;
     max-width: 1200px;
     margin: 0 auto;
     padding: 0.75rem 1.5rem;
     background-color: var(--header-footer-c);
+    text-align: left;
 }
 .footer-text {
-    margin: 0;
     font-size: 0.9rem;
     color: var(--text-c);
     background-color: var(--header-footer-c);
+}
+.footer-image {
+    max-width: 50px;
+    border-radius: 50px;
+    border: 1px solid var(--text-c);
+    display: block;
+    margin: 0 1rem 0.5rem 0;
 }
 
 h1.site-title {
@@ -256,6 +261,9 @@ figcaption {
     }
     .profile-pic {
         max-width: 100px;
+    }
+    .footer-image {
+        max-width: 25px;
     }
 }
 
