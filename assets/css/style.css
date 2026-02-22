@@ -8,7 +8,19 @@
     --header-footer-c: rgb(182, 210, 255);
 }
 
+@media (prefers-color-scheme: dark) {
+    :root {
+        --background-c: rgb(14, 13, 28);
+        --text-c: #ffffff;
+        --emphasis-box-c: rgb(28, 25, 71);
+        --emphasis-text-c: rgb(130, 146, 238);
+        --emphasis-text-highlight-c: rgb(182, 192, 249);
+        --header-footer-c: rgb(28, 25, 71);
+    }
+}
+
 * {
+    background-color: var(--background-c);
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -22,7 +34,7 @@ body {
     justify-content: flex-start;
     min-height: 100vh;
     font-family: 'Noto Serif', 'Times New Roman', serif;
-    background-color: white;
+    background-color: var(--background-c);
     color: var(--text-c);
     line-height: 1.6;
     text-align: justify;
@@ -58,6 +70,7 @@ header {
     color: var(--text-c);
     display: flex;
     justify-content: center;
+    background-color: var(--header-footer-c);
 }
 .header-box {
     display: flex;
@@ -67,6 +80,8 @@ header {
     max-width: 1200px;
     margin: 0 auto;
     color: var(--text-c);
+    background: var(--header-footer-c);
+    background-color: var(--header-footer-c);
 }
 
 footer {
@@ -87,11 +102,13 @@ footer {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0.75rem 1.5rem;
+    background-color: var(--header-footer-c);
 }
 .footer-text {
     margin: 0;
     font-size: 0.9rem;
     color: var(--text-c);
+    background-color: var(--header-footer-c);
 }
 
 h1.site-title {
@@ -104,6 +121,7 @@ h1.site-title {
     font-family: 'Times New Roman', serif;
     font-weight: normal;
     color: var(--text-c);
+    background-color: var(--header-footer-c);
 }
 nav.site-nav {
     display: flex;
@@ -111,6 +129,7 @@ nav.site-nav {
     background: transparent;
     border: none;
     padding: 0 0;
+    background-color: var(--header-footer-c);
 }
 nav.site-nav ul {
     display: flex;
@@ -118,14 +137,20 @@ nav.site-nav ul {
     gap: 1rem;
     margin: 0;
     padding: 0;
+    background-color: var(--header-footer-c);
+}
+nav.site-nav li {
+    background-color: var(--header-footer-c);
 }
 nav.site-nav a {
     color: var(--emphasis-text-c);
     text-decoration: none;
     transition: 0.2s;
+    background-color: var(--header-footer-c);
 }
 nav.site-nav a:hover {
     color: var(--emphasis-text-highlight-c);
+    background-color: var(--header-footer-c);
 }
 
 img {
