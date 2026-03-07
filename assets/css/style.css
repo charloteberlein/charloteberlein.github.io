@@ -52,12 +52,8 @@ body {
 h1, h2, h3, h4, h5, h6 {
     font-family:'Noto Sans', 'Helvetica Neue', Arial, sans-serif; 
     text-align: left;
-    margin-bottom: 1rem;
     hyphens: none;
     color: var(--text-c);
-}
-h1 {
-    margin-bottom: 0;
 }
 
 header {
@@ -200,6 +196,9 @@ figcaption {
 }
 .project-card figure img {
     border: 2px solid var(--text-c);
+    height: 200px;
+    width: auto;
+    object-fit: fill;
 }
 .project-card figure a {
     color: var(--emphasis-text-c);
