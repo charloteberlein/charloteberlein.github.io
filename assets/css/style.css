@@ -121,6 +121,7 @@ h1.site-title {
     margin: 0;
     font-family: 'Times New Roman', serif;
     font-weight: normal;
+    font-size: 2rem;
     color: var(--text-c);
     background-color: var(--header-footer-c);
 }
@@ -252,17 +253,62 @@ figcaption {
     margin: 0 auto;
 }
 
-/* for small screens */
-@media (max-width: 800px) {
+/* for mobile / touchscreen devices */
+@media (pointer: coarse) {
+    /* make about page left-aligned */
     .about-content {
         flex-direction: column;
-        align-items: center;
+        align-items: flex-start;
     }
     .profile-pic {
         max-width: 100px;
+        margin: 0;
+        align-self: flex-start;
     }
+    /* make project cards column-aligned on mobile */
+    .project-card {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+    .project-card figure {
+        width: 100%;
+        align-items: flex-center;
+    }
+    .project-card figure img {
+        width: 80%;
+        height: auto;
+    }
+    /* make site title left-aligned */
+    header {
+        justify-content: flex-start;
+    }
+    .header-box {
+        margin-left: 0;
+        margin-right: auto;
+        padding-left: 2rem;
+    }
+    /* make text larger */
+    h1.site-title {
+        font-size: 4rem;
+    }
+    nav.site-nav {
+        font-size: 2rem;
+    }
+    body {
+        font-size: 2rem;
+    }
+    footer a {
+        font-size: 2rem;
+    }
+    .footer-text {
+        font-size: 2rem;
+        text-align: center;
+    }
+    /* hide image on mobile */
     .footer-image {
-        max-width: 25px;
+        max-width: 0px;
     }
 }
 
