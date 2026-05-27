@@ -1,21 +1,21 @@
 /* default margins & padding */
 :root {
-    --background-c: #ffffff;
-    --text-c: rgb(44, 42, 114);
-    --emphasis-box-c: rgb(182, 210, 255);
-    --emphasis-text-c: rgb(44, 42, 114);
-    --emphasis-text-highlight-c: rgb(107, 103, 229);
-    --header-footer-c: rgb(182, 210, 255);
+    --background-c: rgb(255, 255, 255);
+    --text-c: rgb(18, 20, 60);
+    --emphasis-box-c: rgb(182, 186, 255);
+    --emphasis-text-c: rgb(18, 20, 60);
+    --emphasis-text-highlight-c: rgb(69, 78, 236);
+    --header-footer-c: rgb(255, 255, 255);
 }
 
 @media (prefers-color-scheme: dark) {
     :root {
-        --background-c: rgb(14, 13, 28);
-        --text-c: #ffffff;
+        --background-c: rgb(6, 7, 28);
+        --text-c: rgb(255, 255, 255);
         --emphasis-box-c: rgb(28, 25, 71);
-        --emphasis-text-c: rgb(130, 146, 238);
-        --emphasis-text-highlight-c: rgb(182, 192, 249);
-        --header-footer-c: rgb(28, 25, 71);
+        --emphasis-text-c: rgb(255, 255, 255);
+        --emphasis-text-highlight-c: rgb(69, 78, 236);
+        --header-footer-c: rgb(6, 7, 28);
     }
 }
 
@@ -33,7 +33,7 @@ body {
     align-items: stretch;
     justify-content: flex-start;
     min-height: 100vh;
-    font-family: 'Noto Serif', 'Times New Roman', serif;
+    font-family: 'Inter', sans-serif;
     background-color: var(--background-c);
     color: var(--text-c);
     line-height: 1.6;
@@ -44,20 +44,24 @@ body {
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 2rem;
+    padding: 6rem 2rem;
     box-sizing: border-box;
     flex: 1 0 auto;
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family:'Noto Sans', 'Helvetica Neue', Arial, sans-serif; 
+    font-family: 'Montserrat', monospace; 
     text-align: left;
     hyphens: none;
     color: var(--text-c);
 }
 
+h1, h2, h3 {
+    color: var(--emphasis-text-highlight-c);
+}
+
 header {
-    position: sticky;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
@@ -70,11 +74,11 @@ header {
 }
 .header-box {
     display: flex;
-    align-items: center;
-    gap: 2rem;
-    padding: 0.75rem 1rem;
+    justify-content: space-between;
+    width: 100%;
     max-width: 1200px;
-    margin: 0 auto;
+    margin: 1rem auto 0 auto;
+    padding: 0 2rem;
     color: var(--text-c);
     background: var(--header-footer-c);
     background-color: var(--header-footer-c);
@@ -119,7 +123,7 @@ h1.site-title {
     overflow: hidden;
     text-overflow: ellipsis;
     margin: 0;
-    font-family: 'Times New Roman', serif;
+    font-family: 'Montserrat', monospace;
     font-weight: normal;
     font-size: 2rem;
     color: var(--text-c);
@@ -237,13 +241,13 @@ figcaption {
     max-width: 150px;
     height: auto;
     border-radius: 150px;
-    border: 2px solid var(--text-c);
 }
 
 .banner {
     width: 100%;
     height: 25vh;
     overflow: hidden;
+    margin-top: 6rem;
 }
 .banner img {
     width: 100%;
